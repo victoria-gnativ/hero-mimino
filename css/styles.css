@@ -9,17 +9,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 h1,
 h2,
 h3,
@@ -48,19 +37,23 @@ img {
 }
 
 .container {
-  max-width: 414px;
   margin: 0 auto;
   padding: 0 15px;
-  @media screen and (min-width: $tablet) {
-    max-width: 1024px;
+}
 
-    padding: 0 47px;
+@media screen and (min-width: 414px) {
+  .container {
+    max-width: 414px;
   }
-
-  @media screen and (min-width: $desktop) {
+}
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .container {
     max-width: 1280px;
-
-    padding: 0 85px;
   }
 }
 
@@ -85,17 +78,15 @@ visually-hidden: .visually-hidden {
 
 
 .hero {
-  max-width: 414px;
-    height: 740px;
   position: relative;
-  margin: auto;
+  /* margin: auto; */
+  max-width: 414px;
+  height: 740px;
   padding-top: 181px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-image: var(--hero-gradient),url(../images/pexels-chan-walrus-941861\ 1.jpg);
-
-
 }
 
     @media screen and (min-width:1024px) {
@@ -107,13 +98,15 @@ visually-hidden: .visually-hidden {
 
   @media screen and (min-width:1280px) {
     .hero {
-      max-width: 1280px;
-  padding-top: 164px;
-  padding-bottom: 65px;
-  padding-left: 85px;
-  padding-right: 85px;
+      max-width: 1600px;
+      padding-top: 164px;
+      padding-bottom: 65px;
+      padding-left: 85px;
+      padding-right: 85px;
     }    
   }
+
+
 .hero__title {
   font-family: "Film P3";
   font-weight: 700;
@@ -125,11 +118,19 @@ color: #ffffff;
   text-align: center;
 }
 
+@media screen and (min-width: 1024px){
+
+  .hero__title {
+    margin-bottom: 16px;
+    font-size: 128px;
+  }
+
+}
+
 @media screen and (min-width: 1280px){
 
   .hero__title {
     margin-bottom: 32px;
-    font-size: 128px;
   }
 
 }
@@ -146,6 +147,25 @@ color: #ffffff;
 
   color: #ffffff;
 }
+
+@media screen and (min-width: 1024px){
+
+  .hero__pre-title {
+    margin-bottom: 56px;
+  }
+
+}
+
+@media screen and (min-width: 1280px){
+
+  .hero__pre-title {
+    margin-bottom: 64px;
+  }
+
+}
+
+
+
 .hero__text {
   margin: 0 auto;
   text-align: center;
@@ -160,10 +180,19 @@ color: #ffffff;
   color: #ffffff;
 }
 
+
+@media screen and (min-width: 1024px){
+
+  .hero__text {
+    margin-bottom: 137px;
+  }
+
+}
+
 .hero__address {
-    max-width: 210px;
-    max-height: 47px;
-    padding: 5px;
+    width: 210px;
+    height: 47px;
+    /* padding: 5px; */
 
     position: absolute;
 
@@ -172,23 +201,23 @@ color: #ffffff;
     border-radius: 2px;
 }
 
-@media screen and (min-width:414px) {
+@media screen and (min-width:414px) and (max-width:1023px) {
 
   .hero__address {
     top: 64px;
     right: 15px;  
-    max-width: 285px;
-    max-height: 56px;
+    width: 210px;
+    height: 47px;
   }
 }
 
-@media screen and (min-width:1023px) {
+@media screen and (min-width:1024px) {
 
   .hero__address {
     bottom: 64px; 
     left: 47px;   
-    max-width: 285px;
-    max-height: 56px;
+    width: 285px;
+    height: 56px;
   }
 }
 
@@ -202,11 +231,12 @@ letter-spacing: 0.01em;
   color: #e5e5e5;
 }
 
-@media screen and (min-width:1280px) {
+@media screen and (min-width:1024px) {
   .hero__address-link {
     font-size: 16px;
   }
 }
+
 
 .hero_address-img {
   width: 12px;
@@ -215,41 +245,41 @@ letter-spacing: 0.01em;
   display: inline-block;
 }
 
-.container {
-  max-width: 1280px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin: 0 auto;
-}
-
-.button__list {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.button__item {
-  margin: 0 auto;
-}
-
 .hero__action {
   display: flex;
   justify-content: space-between;
 }
 
+/* .container {
+  max-width: 1280px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+} */
 
-@media screen and (min-width: 414px) {
-  .container {
-    max-width: 414px;
-  }
+.button__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
 }
-@media screen and (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
-  }
+
+@media screen and (min-width:1024px) {
+
+  .button__list {
+  display: flex;
+  flex-direction: unset;
+  gap: 24px;
+  position: absolute;
+  right: 47px;
+  bottom: 64px;
 }
-@media screen and (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-  }
 }
+
+.button__item {
+  
+}
+
+
+
+
